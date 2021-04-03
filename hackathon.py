@@ -31,6 +31,14 @@ elif useremotion == 'happy':
     desiredSub = usersub.get('happy')
 elif useremotion == 'cute':
     desiredSub = usersub.get('cute')
+elif useremotion == 'educational':
+    desiredSub = usersub.get('educational')
+elif useremotion == 'neutral':
+    desiredSub = usersub.get('neutral')
+elif useremotion == 'hacker':
+    desiredSub = usersub.get('hacker')
+elif useremotion == 'beautiful':
+    desiredSub = usersub.get('beautiful')
 else:
     print("Your code is broken and you're dumb smh")
 #now i want the length to see how long
