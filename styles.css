@@ -1,0 +1,21 @@
+.memeDiv{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.meme{
+  height: auto;
+  width: 40%;
+  padding-top: 20px;
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 700px) {
+  .meme {
+    width: 100%;
+  }
+}
