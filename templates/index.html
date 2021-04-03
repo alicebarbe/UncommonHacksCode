@@ -10,7 +10,8 @@
     <meta name="author" content="Ni'Gere, Alice, Lucien, Evan">
     <title>Mood Memes</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <!--<link rel="stylesheet" href="styles.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   </head>
 
   <body>
@@ -28,7 +29,11 @@
         </div>
 
     </div>
-    <script src="memes.js"></script>
+    <p>{{embed}}</p>
+    <script type="text/javascript">
+        var memes = {{embed|safe}}
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/memes.js') }}"></script>
     <!-- <script src="memes2.js"></script> -->
 </body>
 
