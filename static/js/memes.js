@@ -5,7 +5,7 @@
     const showMemes = (data) => {
         data.forEach(item => {
             let div = document.querySelector('.memeDiv');
-            let img = document.createElement('video')
+            let img = document.createElement('img')
             img.className = 'meme'
             img.src = item
             div.appendChild(img)

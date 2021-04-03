@@ -19,8 +19,21 @@ from flask import Flask, jsonify, request, render_template
 import requests
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
+    return render_template(
+        'index.html',
+        data=[{'name':'eyebleach'}, {'name':'Me_irl'}, {'name':'wholesomememes'}])
+
+#@app.route("/test" , methods=['GET', 'POST'])
+#def test():
+#    select = request.form.get('comp_select')
+#    return(str(select)) # just to see what select is
+
+@app.route('/memes', methods=['GET', 'POST'])
+def memes():
+    subreddit_name = request.form.get('comp_select')
     #from myKeys import keys
     reddit = praw.Reddit(client_id="V_XJ0VQSyC9WyQ",      # your client id
                          client_secret="fUsEC3A9CLn1A7dygqiJB16kGBfCfw",  #your client secret
@@ -28,7 +41,9 @@ def index():
                          username = "TheLinkWithin",     # your reddit username
                          password = "summerfood26!")     # your reddit password
     #only image posts
-    subreddit = reddit.subreddit('Eyebleach')
+    #subreddit = reddit.subreddit('Eyebleach')
+    app.logger.info(subreddit_name)
+    subreddit = reddit.subreddit(subreddit_name)
     top_subreddit = subreddit.top()
     print(top_subreddit)
     topics_dict = { "title":[],
@@ -51,8 +66,9 @@ def index():
     topics_data['url_corrected'] = topics_data['url'].map(checkValidMeme)
     topics_data = topics_data.dropna(subset=['url_corrected'])
     embed_list = list(topics_data['url_corrected'])
-    return render_template('index.html', embed=embed_list)
+    return render_template('memes.html', embed=embed_list)
 
+# this runs slowly because of all the internet queries, but it checks for valid URL
 def checkValidMeme2(url):
     # check if image format
     image_formats = ("image/png", "image/jpeg", "image/jpg", "image/gif", 'video/mp4')
