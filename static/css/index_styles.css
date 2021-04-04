@@ -19,6 +19,7 @@ h2 {
     font-size: 2em;
     color: white;
     margin-bottom: 5px;
+    font-family: 'Red Hat Text', serif;
 }
 
 .container {
@@ -60,6 +61,7 @@ textarea {
     h2 {
         font-size: 2.5em;
         padding-right: 15px;
+        font-family: 'Red Hat Text', serif;
     }
 
     .input-group,

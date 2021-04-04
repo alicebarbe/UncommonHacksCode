@@ -16,7 +16,8 @@ app = Flask(__name__)
 def index():
     return render_template(
         'index.html',
-        data=[{'name':'eyebleach'}, {'name':'Me_irl'}, {'name':'wholesomememes'}])
+        data=[{'name':'happy'}, {'name':'sad'}, {'name':'curious'},
+              {'name':'stressed'}, {'name':'neutral'}, {'name':'hacker'}])
 
 @app.route('/memes', methods=['GET', 'POST'])
 def memes():
@@ -29,7 +30,14 @@ def memes():
                          password = "summerfood26!")     # your reddit password
     #only image posts
     #subreddit = reddit.subreddit('Eyebleach')
-    subreddit = reddit.subreddit(subreddit_name)
+    subreddit_dict = {'happy': 'aww+Eyebleach+kitten+HumansBeingBros+AnimalsBeingBros',
+                      'sad': 'me_irl+positivememes+wholesomememes+aww+Eyebleach+kitten',
+                      'curious': 'HistoryMemes+sciencememes+educationmemes+surrealmemes',
+                      'stressed': 'MotivationalMemes+school_memes+CollegeMemes',
+                      'neutral': 'memes',
+                      'hacker': 'ProgrammerHumor+softwaregore+itsaunixsystem'}
+    
+    subreddit = reddit.subreddit(subreddit_dict[subreddit_name])
     top_subreddit = subreddit.top()
     print(top_subreddit)
     topics_dict = { "title":[],
