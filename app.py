@@ -42,7 +42,6 @@ def memes():
                          password = "summerfood26!")     # your reddit password
     #only image posts
     #subreddit = reddit.subreddit('Eyebleach')
-    app.logger.info(subreddit_name)
     subreddit = reddit.subreddit(subreddit_name)
     top_subreddit = subreddit.top()
     print(top_subreddit)
@@ -83,7 +82,7 @@ def checkValidMeme2(url):
                 if requests.head(url).headers["content-type"] in image_formats:
                     print("conversion happening")
                     return url
-                else: 
+                else:
                     print("error2: " + url)
     else:
         print("error: " + url)
@@ -97,7 +96,7 @@ def checkValidMeme(url):
         return url
     else:
         return None
-        
+
 
 if __name__ == '__main__':
     app.debug = True
