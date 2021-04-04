@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="description" content="Mood Memes">
+    <meta name="author" content="Ni'Gere, Alice, Lucien, Evan">
+    <title>Mood Memes</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">✖</a>
+        <h1>Resources</h1>
+            <p>Feeling depressed? Need someone to talk to? Call here: 
+                <strong>1-800-273-8255</strong></p>
+            <p>Don’t want to call? Text <strong>SIGNS</strong> to
+                <strong>741741</strong></p>
+            <p>Are you a teen or veteran? Call here: 
+                <strong>1-800-273-8255</strong></p>
+            <p>And if you need help with substance abuse? Call here: 
+                <strong>1-800-662-4357</strong></p>
+            <br>
+            <p><strong>An Uncommon Hacks 2021 Project by:</strong><br>
+                Ni'Gere Epps <br>
+                Alice Barbe <br>
+                Evan Cholerton <br>
+                Lucien Mensah <br>
+            </p>
+    </div>
+
+    <div class="memeDiv">
+        <button class="openbtn" onclick="openNav()">🛈</button>
+    </div>
+
+    <script type="text/javascript">
+    var memes = {{ embed | safe }}
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/memes.js') }}"></script>
+    <script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.querySelector('.memeDiv').style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0px";
+        document.querySelector('.memeDiv').style.marginLeft = "0px";
+    }
+    </script>
+</body>
