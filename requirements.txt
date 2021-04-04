@@ -33,7 +33,7 @@ imagesize==1.2.0
 importlib-metadata==3.7.3
 intervaltree==3.1.0
 ipykernel==5.3.4
-ipython==7.22.0
+ipython
 ipython-genutils==0.2.0
 isort==5.8.0
 itsdangerous==1.1.0
