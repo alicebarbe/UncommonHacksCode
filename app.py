@@ -95,4 +95,4 @@ def checkValidMeme(url):
 
 if __name__ == '__main__':
     #app.debug = True
-    app.run(threaded=True, port=5000)
+    app.run(threaded=True, port=8000)
