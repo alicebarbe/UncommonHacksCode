@@ -26,15 +26,15 @@ body {
     font-family: 'Red Hat Text', serif;
 }
 
-h1{
-  margin-top: -10px;
-  padding-left: 20px;
+h1 {
+    margin-top: -10px;
+    padding-left: 20px;
 }
 
-p{
-  padding: 0px 20px 0px 20px;
-  font-size: 1em;
-  line-height: 150%
+p {
+    padding: 0px 20px 0px 20px;
+    font-size: 1em;
+    line-height: 150%
 }
 
 
@@ -44,49 +44,104 @@ p{
     padding-bottom: 3%;
     border: none;
     flex-grow: 1;
+    position: absolute;
     margin: 10 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.splide__track {
+    text-align: center;
+}
+
+.splide,
+.splide__slide {
+    margin: auto;
+}
+
+.splide__progress {
+    width: 50%;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.splide__progress__bar {
+    text-align: center;
+    background-color: white;
+    padding-left: 5%;
+}
+
+.splide__video {
+    background: none;
+}
+
+.splide__optional-button-container {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.splide__play-pause {
+    font-size: 4em;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    color: white;
+    padding: 15px 15px;
+    border: none;
+    position: fixed;
+    bottom: 0;
+    left: 1em;
+    text-shadow: 2px 2px 2px black;
+}
+
+.splide__play-pause:hover {
+    color: #d2c5c5;
 }
 
 .sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #373232;
-  color: white;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #373232;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
 
 
 .sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 3em;
-  margin-left: 50px;
-  color: white;
-  text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 3em;
+    margin-left: 50px;
+    color: white;
+    text-decoration: none;
 }
 
 .sidebar .closebtn:hover {
-  color: #d2c5c5;
+    color: #d2c5c5;
 }
 
 .openbtn {
-  font-size: 3em;
-  cursor: pointer;
-  background: none;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  text-shadow: 0 1px 2px black;
+    font-size: 4em;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-shadow: 2px 2px 2px black;
 }
 
 .musicbtn {
@@ -100,13 +155,18 @@ p{
 }
 
 .openbtn:hover {
-  color: #d2c5c5;
+    color: #d2c5c5;
 }
 
 
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -114,11 +174,15 @@ p{
         width: 94%;
         height: auto;
     }
+
+    .splide__progress {
+        width: 94%;
+    }
 }
 
 @media only screen and (min-width: 701px) {
     .meme {
-        height: 500px;
+        height: 90%;
         width: auto;
     }
 }

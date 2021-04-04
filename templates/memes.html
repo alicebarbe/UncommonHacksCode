@@ -10,8 +10,12 @@
     <meta name="author" content="Ni'Gere, Alice, Lucien, Evan">
     <title>Mood Memes</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@latest/dist/css/splide-extension-video.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-video@latest/dist/js/splide-extension-video.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body>
@@ -46,15 +50,10 @@
                 Lucien Mensah <br>
             </p>
     </div>
-
-    <div class="memeDiv">
-        <button class="openbtn" onclick="openNav()">&#9432;</button>
-    </div>
-
     <script type="text/javascript">
     var memes = {{ embed | safe }}
     </script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/memes.js') }}"></script>
+    
     <script>
     function openNav() {
         document.getElementById("mySidebar").style.width = "250px";
@@ -66,4 +65,21 @@
         document.querySelector('.memeDiv').style.marginLeft = "0px";
     }
     </script>
+    <div id="image-slider" class="splide">
+        <button class="openbtn" onclick="openNav()">&#9432;</button>
+        <div class="splide__track">
+            <ul class="splide__list">
+            </ul>
+        </div>
+        <div class="splide__progress">
+            <div class="splide__progress__bar">
+            </div>
+        </div>
+        <div class="splide__autoplay">
+            <div class="splide__optional-button-container">
+                <button class="splide__play-pause" aria-controls="splide-track">&#x23f8;</button>
+            </div> 
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/memes.js') }}"></script>
 </body>
