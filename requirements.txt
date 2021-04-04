@@ -58,8 +58,8 @@ nest-asyncio==1.5.1
 numpy==1.19.2
 numpydoc==1.1.0
 packaging==20.9
-pandas==1.2.3
-pandocfilters==1.4.3
+pandas
+pandocfilters
 paramiko==2.7.2
 parso==0.7.0
 pathspec==0.7.0
