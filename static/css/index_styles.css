@@ -38,11 +38,8 @@ textarea {
     box-sizing: border-box;
     resize: vertical;
     margin: auto;
-    /*text-align: center; */
 }
 
-
-/* Style the submit button */
 .btn {
     background-color: white;
     color: #00cfff;

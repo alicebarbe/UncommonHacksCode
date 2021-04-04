@@ -4,7 +4,7 @@
         data.forEach(item => {
             let div = document.querySelector('.memeDiv');
 
-            if (item.slice(-1) == "4") { //if video
+            if (item.slice(-1) == "4") { 
                 let vid = document.createElement('VIDEO')
                 vid.className = 'meme'
                 vid.src = item
@@ -18,7 +18,7 @@
                     div.removeChild(vid);
                 });
                 div.appendChild(vid)
-            } else { //if png or jpg
+            } else { 
                 let img = document.createElement('img')
                 img.className = 'meme'
                 img.src = item
