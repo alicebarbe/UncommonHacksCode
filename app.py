@@ -5,12 +5,9 @@ Created on Sat Apr  3 20:48:25 2021
 @author: Alice
 """
 
-from praw import Reddit
-from datetime import datetime
-from pprint import pprint
-import pandas as pd
 import praw
-from flask import Flask, jsonify, request, render_template
+import pandas as pd
+from flask import Flask, request, render_template
 import requests
 app = Flask(__name__)
 
@@ -20,11 +17,6 @@ def index():
     return render_template(
         'index.html',
         data=[{'name':'eyebleach'}, {'name':'Me_irl'}, {'name':'wholesomememes'}])
-
-#@app.route("/test" , methods=['GET', 'POST'])
-#def test():
-#    select = request.form.get('comp_select')
-#    return(str(select)) # just to see what select is
 
 @app.route('/memes', methods=['GET', 'POST'])
 def memes():
@@ -94,5 +86,5 @@ def checkValidMeme(url):
 
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run()
+    #app.debug = True
+    app.run(threaded=True, port=5000)
