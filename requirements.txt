@@ -1,3 +1,4 @@
+nomkl
 alabaster==0.7.12
 appdirs==1.4.4
 argh==0.26.2
@@ -48,8 +49,6 @@ lazy-object-proxy==1.6.0
 MarkupSafe==1.1.1
 mccabe==0.6.1
 mistune==0.8.4
-mkl-fft
-mkl-random
 mypy-extensions==0.4.3
 nbclient==0.5.3
 nbconvert==6.0.7
@@ -98,9 +97,8 @@ QtPy==1.9.0
 regex==2021.3.17
 requests==2.25.1
 rope==0.18.0
-Rtree==0.9.4
 setuptools
-sip==4.19.13
+sip
 six==1.15.0
 snowballstemmer==2.1.0
 sortedcontainers==2.3.0
@@ -111,14 +109,12 @@ sphinxcontrib-htmlhelp==1.0.3
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.4
-spyder==4.2.5
-spyder-kernels==1.10.2
 testpath==0.4.4
 textdistance==4.2.1
 three-merge==0.1.1
 toml==0.10.2
 tornado==6.1
-traitlets==5.0.5
+traitlets
 typed-ast==1.4.2
 typing-extensions==3.7.4.3
 ujson==4.0.2
