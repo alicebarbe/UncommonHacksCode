@@ -99,7 +99,7 @@ regex==2021.3.17
 requests==2.25.1
 rope==0.18.0
 setuptools
-sip==4.19.13
+sip
 six==1.15.0
 snowballstemmer==2.1.0
 sortedcontainers==2.3.0
