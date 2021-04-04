@@ -7,17 +7,18 @@ from praw import Reddit
 from datetime import datetime
 from pprint import pprint
 from pandas import DataFrame as df
+import random
 import praw
 
-#from myKeys import keys
+#this is the reddit api information
 reddit = praw.Reddit(client_id="V_XJ0VQSyC9WyQ",      # your client id
                      client_secret="fUsEC3A9CLn1A7dygqiJB16kGBfCfw",  #your client secret
                      user_agent="my user agent", #user agent name
                      username = "TheLinkWithin",     # your reddit username
                      password = "summerfood26!")     # your reddit password
-#print(reddit.read_only)
-#only image posts
+#this input gets the emotion the user wants
 useremotion = input("What emotion do you want? ")
+#dictionary of subs that will give users the sub stuff depending on what they would like to see
 usersub = {"happy":"wholesomememes+eyebleach+funny",
            "cute":"aww+kitten",
            "sad":"sadcringe+meirl",
@@ -25,6 +26,7 @@ usersub = {"happy":"wholesomememes+eyebleach+funny",
            "neutral":"mildlyinteresting+showerthoughts",
            "hacker":"ProgrammerHumor+gaming+gadgets",
            "beautiful":"earthporn+space+InternetIsBeautiful"}
+#dictates the emotion that users want
 if useremotion == 'sad':
     desiredSub = usersub.get('sad')
 elif useremotion == 'happy':
@@ -41,25 +43,20 @@ elif useremotion == 'beautiful':
     desiredSub = usersub.get('beautiful')
 else:
     print("Your code is broken and you're dumb smh")
-#now i want the length to see how long
-print(len(desiredSub))
-if len(desiredSub) > 0:
-    print("there are multiple subs")
-    #so now i want to run a for loop, adding a number until it reaches the end
 
-#for submission in reddit.subreddit("redditdev+learnpython").top("all"):
-  #  print(submission)    
+#the desired sub that i want    
 subreddit = reddit.subreddit(desiredSub)
+#queries 300 posts from the sub
 top_subreddit = subreddit.top(limit=300)
-#for submission in subreddit.top(limit=1):
-    #print(submission.title, submission.id)
+#this function gives us our information into a neat little dataframe
 def redditpull(subreddit):
     topics_dict = { "title":[],
                 "score":[],
                 "id":[], "url":[], 
                 "comms_num": [], 
                 "created": [], 
-                "body":[]}
+                "body":[],
+                "subname":[]}
     for submission in top_subreddit:
         topics_dict["title"].append(submission.title)
         topics_dict["score"].append(submission.score)
@@ -68,35 +65,22 @@ def redditpull(subreddit):
         topics_dict["comms_num"].append(submission.num_comments)
         topics_dict["created"].append(submission.created)
         topics_dict["body"].append(submission.selftext)
-    
-    
+        topics_dict["subname"].append(reddit.subreddit(desiredSub))
+        
     topics_data = df(topics_dict)
- 
-#only images specially, or imgur, or image links
-#the url is the most important think
-#urls = df['url']
+    #prints the urls of the code
     print(topics_data.url)
-#i want to feel sad, cute, funny, happy
+    #this randomizes the urls that are given so users see a variety of memes
+    global randomize
+    randomize = topics_data.url
+    random.shuffle(randomize)
+    print(topics_dict.get('subname'))
+    return randomize
+
 
 redditpull(usersub)
-
-'''
-saddness subs:
-    eyebleach
-
-happiness subs:
-wholesomememes
-
-cute things:
-aww
-Kitten
-
-hacker:
-ProgrammerHumor
-    
-irony
-dankmemes
-me_irl
-
-
-'''
+#print(randomize)
+print(usersub.get('sad'))
+if '+' in usersub.get('sad'):
+    print("it has that")
+  #  if topics_data.url in #the subrredit, so which one keeps track of the subreddit
