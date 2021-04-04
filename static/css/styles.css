@@ -1,21 +1,35 @@
-.memeDiv{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  margin: 0 auto;
+.memeDiv {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
 }
 
-.meme{
-  height: auto;
-  width: 40%;
-  padding-top: 20px;
-  flex-grow: 1;
+body {
+    background-color: #7FDBFF;
+}
+
+.meme {
+    max-width: 94%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border: none;
+    flex-grow: 1;
+    margin: 10 10;
 }
 
 @media only screen and (max-width: 700px) {
-  .meme {
-    width: 100%;
-  }
+    .meme {
+        width: 94%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 701px) {
+    .meme {
+        height: 500px;
+        width: auto;
+    }
 }

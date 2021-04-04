@@ -5,11 +5,6 @@ Created on Sat Apr  3 20:48:25 2021
 @author: Alice
 """
 
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr  3 00:10:46 2021
-"""
-
 from praw import Reddit
 from datetime import datetime
 from pprint import pprint
