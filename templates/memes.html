@@ -15,9 +15,21 @@
 </head>
 
 <body>
+
+    <audio id='player' autoplay loop>
+        <source src={{music}} type="audio/mp3">
+      Your browser does not support the audio element.
+      </audio> 
+      <div> 
+        <button class='musicbtn' onclick="document.getElementById('player').play()">&#x23f5;</button> 
+        <button class='musicbtn' onclick="document.getElementById('player').pause()">&#x23f8;</button> 
+        <button class='musicbtn' onclick="document.getElementById('player').volume += 0.1">&#x23f6;</button> 
+        <button class='musicbtn' onclick="document.getElementById('player').volume -= 0.1">&#x23f7;</button> 
+      </div>
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <h1>Resources</h1>
+            <p> {{music}}</p>
             <p>Feeling depressed? Need someone to talk to? Call here: 
                 <strong>1-800-273-8255</strong></p>
             <p>Don’t want to call? Text <strong>SIGNS</strong> to

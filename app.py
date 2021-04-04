@@ -21,6 +21,13 @@ def index():
 
 @app.route('/memes', methods=['GET', 'POST'])
 def memes():
+    # select music
+    music_selection = request.form['music']
+    music_dict = {'Silence': '',
+                  'Lo-Fi': 'https://www.dropbox.com/s/y81yqkqe2l4l9l8/lofi.mp3?dl=1',
+                  'ASMR': 'https://www.dropbox.com/s/7x6og87dvxld8ns/asmr.mp3?dl=1'}
+    music_link = music_dict[music_selection]
+    # select subreddit
     subreddit_name = request.form.get('comp_select')
     #from myKeys import keys
     reddit = praw.Reddit(client_id="V_XJ0VQSyC9WyQ",      # your client id
@@ -60,7 +67,7 @@ def memes():
     topics_data['url_corrected'] = topics_data['url'].map(checkValidMeme)
     topics_data = topics_data.dropna(subset=['url_corrected'])
     embed_list = list(topics_data['url_corrected'])
-    return render_template('memes.html', embed=embed_list)
+    return render_template('memes.html', embed=embed_list, music=music_link)
 
 # this runs slowly because of all the internet queries, but it checks for valid URL
 def checkValidMeme2(url):
@@ -94,5 +101,5 @@ def checkValidMeme(url):
 
 
 if __name__ == '__main__':
-    #app.debug = True
+    app.debug = True
     app.run(threaded=True, port=5000)

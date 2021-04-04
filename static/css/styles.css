@@ -8,6 +8,19 @@
     transition: margin-left .5s;
 }
 
+.btn {
+  background-color: white;
+  color: #00cfff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 body {
     background-color: #7FDBFF;
     font-family: 'Red Hat Text', serif;
@@ -73,6 +86,16 @@ p{
   position: fixed;
   bottom: 0;
   left: 0;
+  text-shadow: 0 1px 2px black;
+}
+
+.musicbtn {
+  font-size: 3em;
+  cursor: pointer;
+  background: none;
+  color: white;
+  padding: 10px 5px;
+  border: none;
   text-shadow: 0 1px 2px black;
 }
 
