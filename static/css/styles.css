@@ -37,6 +37,9 @@ p {
     line-height: 150%
 }
 
+#music{
+  display: none;
+}
 
 .meme {
     max-width: 94%;
