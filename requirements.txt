@@ -99,7 +99,7 @@ regex==2021.3.17
 requests==2.25.1
 rope==0.18.0
 Rtree==0.9.4
-setuptools==52.0.0.post20210125
+setuptools
 sip==4.19.13
 six==1.15.0
 snowballstemmer==2.1.0
